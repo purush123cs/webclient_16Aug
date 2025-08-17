@@ -18,6 +18,10 @@ import org.springframework.web.reactive.function.client.support.WebClientAdapter
 @Configuration
 public class EmployeeClientConfig {
 
+    //https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-webclient
+    //https://medium.com/nerd-for-tech/webclient-error-handling-made-easy-4062dcf58c49
+    //Exchange filter function is other way to handle webclient errors
+        //https://docs.spring.io/spring-framework/reference/web/webflux-webclient/client-filter.html
     @Bean
     public EmployeeClient employeeClient(EmployeeServiceProperties properties) {
         WebClient webClient = WebClient.builder()
