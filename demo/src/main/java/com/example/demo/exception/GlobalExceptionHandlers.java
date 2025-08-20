@@ -37,7 +37,7 @@ public class GlobalExceptionHandlers {
 
     @ExceptionHandler(Exception.class)
     public ProblemDetail handleAll(HttpServletRequest request, Exception exception) {
-
+        exception.printStackTrace();
         ProblemDetail problemDetail = ProblemDetail.forStatus(HttpStatus.INTERNAL_SERVER_ERROR);
         problemDetail.setDetail("Error message from downstream:" + exception.getMessage());
         problemDetail.setProperty("timestamp", new Date());//custom property
